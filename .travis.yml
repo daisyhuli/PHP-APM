@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.2.10
+
+before_install:
+  - curl -sS https://getcomposer.org/installer | php
+  - mv composer.phar /usr/local/bin/composer
+
+install:
+  - composer install
+
+script:
+  - true
+
+after_script:
+  - ls
+
+global:
+  - GH_REF: https://github.com/daisyhuli/PHP-APM.git
