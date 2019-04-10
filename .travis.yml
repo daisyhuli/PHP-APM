@@ -5,7 +5,7 @@ php:
 
 before_install:
   - curl -sS https://getcomposer.org/installer | php
-  - sudo mv composer.phar /usr/local/bin/composer
+  - mv composer.phar /usr/local/bin/composer
 
 install:
   - composer install

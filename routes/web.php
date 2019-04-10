@@ -18,4 +18,5 @@ Route::group(['middleware' => ['web']],function() {
     Route::any ('/login',"UserController@checkStatus");
     Route::any ('/userInfo',"UserController@viewStatus");
     Route::any ('/logout',"UserController@logOut");
+    Route::any ('/hello',"UserController@hello");
 });

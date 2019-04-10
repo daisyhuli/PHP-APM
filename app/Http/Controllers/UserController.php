@@ -25,7 +25,6 @@ class UserController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         $name = $request->input('nickname');
-        
         $num = DB::select("select id from users where email='$email' limit 1");
  
         $raw_fail = array(
@@ -56,7 +55,7 @@ class UserController extends Controller
         $password = $request->input('password');
         
         // $input = $request->all();
-        // dd($input);
+        // return dd($input);
 
         $user = User::where('email', $email)->first();
     
@@ -114,4 +113,5 @@ class UserController extends Controller
         return json_encode($raw_fail);
         
     }
+
 }
