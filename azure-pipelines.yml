@@ -24,5 +24,9 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-
+  
+- task: ArchiveFiles@2
+  inputs: 
+  rootFolderOrFile: '$(system.defaultWorkingDirectory)'
+  includeRootFollder: false
 - task: PublishBuildArtifacts@1
