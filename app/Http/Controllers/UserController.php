@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    /*register 存储新用户
+    /*register save new users 存储新用户
     * @param Request $request
     * return Response
     */
@@ -48,15 +48,11 @@ class UserController extends Controller
  
     }
 
-    // login 查找用户输入是否一致
+    // login  check user status 查找用户输入是否一致
     public function checkStatus(Request $request) {
 
         $email = $request->input('userName');
         $password = $request->input('password');
-        
-        // $input = $request->all();
-        // return dd($input);
-
         $user = User::where('email', $email)->first();
     
 
@@ -89,7 +85,7 @@ class UserController extends Controller
    
         if(Session::has('token') && Session::get('token') == $cookie){
            
-           //有值数组, 没有空数组
+           // 有值数组, 没有空数组 
             $user = DB::select('select * from users where email = ?', [$cookie]);
 
             if($user != null) {
